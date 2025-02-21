@@ -1,3 +1,4 @@
+#include "Dør.h"
 #include "driver/elevio.h"
 #include <signal.h>
 #include <stdio.h>
@@ -5,7 +6,10 @@
 #include <time.h>
 
 int main() {
+
+    
   elevio_init();
+
 
   printf("=== Example Program ===\n");
   printf("Press the stop button on the elevator panel to exit\n");
@@ -16,9 +20,9 @@ int main() {
     int floor = elevio_floorSensor();
 
     if (floor == 2) {
-      printf("Start\n");
-      start_nedtelling();
-      printf("Stop\n");
+      printf("Start timer\n");
+      start_nedtelling(dør_åpen);
+      printf("Stop timer\n");
     }
 
     if (elevio_stopButton()) {

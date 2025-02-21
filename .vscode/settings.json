@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "dør.h": "c"
-    }
+        "dør.h": "c",
+        "elevio.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
