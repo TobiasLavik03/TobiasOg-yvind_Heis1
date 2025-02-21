@@ -10,13 +10,13 @@ void legg_til_etasje_i_kø();
 void oppdater_neste_stopp();
 
 typedef struct{
-    etasje* liste;
+    Etasje* liste;
     int lengde;
 } Kø;
 
 int neste_stopp;
 
-void legg_til_etasje_i_kø(Kø *aKø, etasje aEtasje);
+void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje);
 void fjern_etasjer_fra_kø(Kø &aKø, int aEtasje);
 void oppdater_neste_stopp();
 

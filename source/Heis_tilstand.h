@@ -5,7 +5,8 @@ typedef enum {
     truffet_bunn,
     truffet_topp,
     står_stille_i_etasje,
-    står_stille_ikke_i_etasje
+    står_stille_ikke_i_etasje,
+    obstruksjon
 } Heistilstand;
 
 int volatile etasje;

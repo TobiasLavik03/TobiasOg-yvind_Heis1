@@ -7,6 +7,6 @@ struct Heispanel_lys{
 }
 
 etasje heispanelknapp_trykket();
-bool stoppknapp_aktiv();
-void tøm_kø(Kø &Kø);
+void endre_tilstand_stoppmodus(Heistilstand *tilstand);
+
 
