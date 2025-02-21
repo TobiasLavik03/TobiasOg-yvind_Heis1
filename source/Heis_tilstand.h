@@ -12,3 +12,5 @@ typedef enum {
 int volatile etasje;
 
 bool er_i_etasje();
+
+go_to_default();
