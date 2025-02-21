@@ -2,6 +2,7 @@ typedef struct {
   int etasje;
   int retning; // -1 nedover, 1 oppover, 0 ingen retning (for heispanelet)
 } Etasje;
+
 typedef struct{
     Etasje* liste;
     int lengde;
