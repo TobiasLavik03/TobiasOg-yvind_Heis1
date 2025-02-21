@@ -1,4 +1,1 @@
-Hei øyvind. Så kjekt du ville lese readme filen!
-- jo det var kjekt. 
-- test
-- test 2
+Har laget funksjonen void fjern_etasjer_fra_kø(Kø *aKø, int aEtasje);
