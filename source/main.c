@@ -15,9 +15,24 @@ int main() {
   while (1) {
     int floor = elevio_floorSensor();
 
-    elevio_buttonLamp(3, BUTTON_HALL_DOWN, 0);
-    elevio_floorIndicator(3);
+    if (floor == 2) {
+      printf("Start\n");
+      start_nedtelling();
+      printf("Stop\n");
+    }
 
+    if (elevio_stopButton()) {
+      elevio_motorDirection(DIRN_STOP);
+      break;
+    }
+
+    if (floor == 0)
+      elevio_motorDirection(DIRN_UP);
+
+    if (floor == N_FLOORS - 1)
+      elevio_motorDirection(DIRN_DOWN);
+
+    /*
     if (elevio_obstruction())
       elevio_doorOpenLamp(1);
     else
@@ -45,6 +60,7 @@ int main() {
       elevio_motorDirection(DIRN_STOP);
       break;
     }
+    */
 
     nanosleep(&(struct timespec){0, 20 * 1000 * 1000}, NULL);
   }
