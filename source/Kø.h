@@ -1,4 +1,6 @@
 #pragma once
+#include <stdlib.h>
+
 
 typedef struct {
   int etasje;
@@ -10,7 +12,7 @@ typedef struct{
     int lengde;
 } Kø;
 
-int neste_stopp;
+extern int neste_stopp;     // extern fordi den deklareres i h fila, men defineres i en annen fil
 
 void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje);
 void tøm_kø(Kø *aKø);

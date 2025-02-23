@@ -1,4 +1,5 @@
 #pragma once
+#include <stdbool.h>
 
 typedef enum {
     Kjører_opp,
@@ -11,7 +12,7 @@ typedef enum {
     obstruksjon
 } Heistilstand;
 
-volatile int etasje;
+extern volatile int etasje;
 
 bool er_i_etasje();
 

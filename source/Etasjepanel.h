@@ -1,5 +1,6 @@
 #pragma once
 #include "Kø.h"
+#include <stdbool.h>
 
 struct Etasjepanel {
     bool etasjepanel_lys1;
