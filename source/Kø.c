@@ -1,4 +1,5 @@
 #include "Kø.h"
+#include<stdlib.h>
 
 void oppdater_neste_stopp(Kø *aKø) {
     // logikk for å finne neste stopp, ser på avstand til etasje, og retning på ønsket

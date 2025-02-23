@@ -11,6 +11,9 @@ typedef enum {
 
 int volatile etasje;
 
-bool er_i_etasje();
+int er_i_etasje();
 
-go_to_default();
+void go_to_default();
+
+void endre_tilstand_obstruksjon(Heistilstand *heistilstand);        // kalles dersom elevio_obstruction() endres
+

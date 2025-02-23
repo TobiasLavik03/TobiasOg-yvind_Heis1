@@ -1,9 +1,12 @@
-#include "Dør.h"
-#include "driver/elevio.h"
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "driver/elevio.h"
+#include "Heis_tilstand.h"
+#include "Dør.h"
+#include "Kø.h"
+
 
 int main() {
 
