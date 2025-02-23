@@ -1,4 +1,6 @@
+#pragma once
 #include "Kø.h"
+
 struct Etasjepanel {
     bool etasjepanel_lys1;
     bool etasjepanel_lys2;

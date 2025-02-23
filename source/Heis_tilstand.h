@@ -1,3 +1,5 @@
+#pragma once
+
 typedef enum {
     Kjører_opp,
     Kjører_ned,
@@ -9,8 +11,8 @@ typedef enum {
     obstruksjon
 } Heistilstand;
 
-int volatile etasje;
+volatile int etasje;
 
 bool er_i_etasje();
 
-go_to_default();
+void go_to_default();
