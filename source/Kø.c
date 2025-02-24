@@ -12,7 +12,6 @@ void tøm_kø(Kø* k) {
         k->liste = NULL;        // Nullstiller pekeren
     }
     k->lengde = 0;              // Nullstiller lengden
->>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 }
 
 
@@ -24,7 +23,6 @@ void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje){
 
     // må legge til et "filter" slik at ikke samme etasje legges til flere ganger
 
->>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 }; 
 
 

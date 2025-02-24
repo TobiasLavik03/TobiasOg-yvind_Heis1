@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #include "Dør.h"
 #include "Heis_tilstand.h"
 #include "Heiskontroller.h"
@@ -7,13 +5,10 @@
 #include "Kø.h"
 #include "Etasjepanel.h"
 #include "driver/elevio.h"
->>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 #include <signal.h>
 #include <stdio.h>
 #include <time.h>
-
 #include <stdbool.h>
->>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 
 int main() {
     
