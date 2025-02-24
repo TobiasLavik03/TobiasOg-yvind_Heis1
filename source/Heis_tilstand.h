@@ -1,3 +1,6 @@
+#pragma once
+#include <stdbool.h>
+
 typedef enum {
     Kjører_opp,
     Kjører_ned,
@@ -9,11 +12,13 @@ typedef enum {
     obstruksjon
 } Heistilstand;
 
-int volatile etasje;
+extern volatile int etasje;
 
 int er_i_etasje();
 
 void go_to_default();
 
 void endre_tilstand_obstruksjon(Heistilstand *heistilstand);        // kalles dersom elevio_obstruction() endres
+
+void go_to_default();
 

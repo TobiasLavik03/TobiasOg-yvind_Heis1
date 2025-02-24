@@ -27,7 +27,7 @@ void elevio_floorIndicator(int floor);
 void elevio_doorOpenLamp(int value);
 void elevio_stopLamp(int value);
 
-int elevio_callButton(int floor, ButtonType button);
+int elevio_callButton(int floor, ButtonType button);        // returner 1 dersom knappen er trykket på
 int elevio_floorSensor(void);
 int elevio_stopButton(void);
 int elevio_obstruction(void);

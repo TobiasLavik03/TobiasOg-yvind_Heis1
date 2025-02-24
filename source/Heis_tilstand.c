@@ -1,5 +1,3 @@
-#include "Heis_tilstand.h"
 
-void endre_tilstand_obstruksjon(Heistilstand *heistilstand) {
-    // endrer tilstanden obstruksjon i heistilstand-enum
-};
+#include "Heis_tilstand.h"
+>>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a

@@ -1,18 +1,39 @@
+<<<<<<< HEAD
+=======
+#include "Dør.h"
+#include "Heis_tilstand.h"
+#include "Heiskontroller.h"
+#include "heispanel.h"
+#include "Kø.h"
+#include "Etasjepanel.h"
+#include "driver/elevio.h"
+>>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 #include <signal.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
-#include "driver/elevio.h"
-#include "Heis_tilstand.h"
-#include "Dør.h"
-#include "Kø.h"
 
+#include <stdbool.h>
+>>>>>>> e66c6a82aee7679508e1f8fc0d99fc335035772a
 
 int main() {
-
     
   elevio_init();
 
+  // lite testprogram hvor man lager køen manuelt
+  Etasje e1 = {1, 0};
+  Etasje e2 = {2, 1};
+  Etasje e3 = {3, -1};
+
+  Kø aKø;
+  aKø.lengde = 0;
+  legg_til_etasje_i_kø(&aKø, e1);
+  legg_til_etasje_i_kø(&aKø, e2);
+  legg_til_etasje_i_kø(&aKø, e3);
+
+
+  
+  
+  int etasje = 0;
 
   printf("=== Example Program ===\n");
   printf("Press the stop button on the elevator panel to exit\n");
@@ -20,54 +41,21 @@ int main() {
   elevio_motorDirection(DIRN_UP);
 
   while (1) {
-    int floor = elevio_floorSensor();
 
-    if (floor == 2) {
-      printf("Start timer\n");
-      start_nedtelling(dør_åpen);
-      printf("Stop timer\n");
+    if (elevio_callButton(2, BUTTON_HALL_UP)) {
+      printf("Første etasje oppover\n");
     }
 
-    if (elevio_stopButton()) {
-      elevio_motorDirection(DIRN_STOP);
-      break;
-    }
+    etasje = elevio_floorSensor();
 
-    if (floor == 0)
+    if (etasje == 0) {
       elevio_motorDirection(DIRN_UP);
+    };
 
-    if (floor == N_FLOORS - 1)
+    if (etasje == 3) {
       elevio_motorDirection(DIRN_DOWN);
+    } ;
 
-    /*
-    if (elevio_obstruction())
-      elevio_doorOpenLamp(1);
-    else
-      elevio_doorOpenLamp(0);
-
-    if (floor == 0)
-      elevio_motorDirection(DIRN_UP);
-
-    if (floor == N_FLOORS - 1)
-      elevio_motorDirection(DIRN_DOWN);
-
-    for (int f = 0; f < N_FLOORS; f++) {
-      for (int b = 0; b < N_BUTTONS; b++) {
-        int btnPressed = elevio_callButton(f, b);
-        elevio_buttonLamp(f, b, btnPressed);
-      }
-    }
-
-    if (elevio_obstruction())
-      elevio_stopLamp(1);
-    else
-      elevio_stopLamp(0);
-
-    if (elevio_stopButton()) {
-      elevio_motorDirection(DIRN_STOP);
-      break;
-    }
-    */
 
     nanosleep(&(struct timespec){0, 20 * 1000 * 1000}, NULL);
   }
