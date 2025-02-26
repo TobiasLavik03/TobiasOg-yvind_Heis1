@@ -14,15 +14,32 @@ void tøm_kø(Kø* k) {
     k->lengde = 0;              // Nullstiller lengden
 }
 
+// sjekker om en etasje ligger i køen
+int etasje_finnes_i_kø(Kø *aKø, Etasje aEtasje) {
+    for (int i = 0; i < aKø->lengde; i++) {
+        if (aKø->liste[i].etasje == aEtasje.etasje && aKø->liste[i].retning == aEtasje.retning) {
+            return 1;
+        }
+    }
+    return 0;
+};
+
 
 void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje){
-    aKø->lengde++;
 
-    aKø->liste = (Etasje*) realloc(aKø->liste, aKø->lengde * sizeof(Etasje)); //finner plass i minnet med plass til ant bytes fra der aKø->liste peker + ant etasjer ganget med etasjestørrelsen
-    aKø->liste[aKø->lengde - 1] = aEtasje;
+    // filter for at ikke samme etasje legges inn flere ganger
+    // loope gjennom kø
+    // hvis etasje ligger i kø, ikke legg til i kø
+    // hvis ikke, legg til i kø
+    
+    if (etasje_finnes_i_kø(aKø, aEtasje)) {
+        return;
+    } else {
+        aKø->lengde++;
 
-    // må legge til et "filter" slik at ikke samme etasje legges til flere ganger
-
+        aKø->liste = (Etasje*) realloc(aKø->liste, aKø->lengde * sizeof(Etasje)); //finner plass i minnet med plass til ant bytes fra der aKø->liste peker + ant etasjer ganget med etasjestørrelsen
+        aKø->liste[aKø->lengde - 1] = aEtasje;
+    }
 }; 
 
 

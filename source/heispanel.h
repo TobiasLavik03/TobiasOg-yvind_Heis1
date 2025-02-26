@@ -1,7 +1,10 @@
 #pragma once
-#include "Kø.h"
 #include <stdbool.h>
+#include "Kø.h"
 #include "Heis_tilstand.h"
+#include "driver/elevio.h"
+#include <stdio.h>
+
 
 
 typedef struct {
@@ -12,7 +15,7 @@ typedef struct {
     bool stoppknapp_lys; 
 } Heispanel_lys;
 
-Etasje heispanelknapp_trykket();
+void heispanel_etasjetrykk(Kø *aKø);
 void endre_tilstand_stoppmodus(Heistilstand *tilstand);
 
 
