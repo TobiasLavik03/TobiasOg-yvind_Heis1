@@ -1,8 +1,18 @@
 #include "Kø.h"
-#include<stdlib.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void oppdater_neste_stopp(Kø *aKø) {
-    // logikk for å finne neste stopp, ser på avstand til etasje, og retning på ønsket
+
+volatile int neste_stopp = 0;
+
+int finn_neste_stopp(Kø *aKø) {
+    if (aKø == NULL || aKø->liste == NULL || aKø->lengde == 0) {
+        printf("Feil: tom kø");
+        return -1;
+    }
+
+    // forenklet versjon: første i køen
+    return aKø->liste[0].etasje;
 }
 
 // tømmer hele køen

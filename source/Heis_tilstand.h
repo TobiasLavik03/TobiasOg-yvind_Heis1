@@ -12,7 +12,8 @@ typedef enum {
     obstruksjon
 } Heistilstand;
 
-extern volatile int etasje;
+extern volatile int etasje_tilstand;
+extern volatile int sist_etasje;                        // etasjen heisen er i eller forrige etasje dersom heisen er i bevegelse
 
 int er_i_etasje();
 
@@ -21,4 +22,6 @@ void go_to_default();
 void endre_tilstand_obstruksjon(Heistilstand *heistilstand);        // kalles dersom elevio_obstruction() endres
 
 void go_to_default();
+
+int etasje_sist_vært_i(int etasje);     
 

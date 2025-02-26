@@ -33,8 +33,7 @@ void heispanel_etasjetrykk(Kø *aKøPtr) {
     if (elevio_callButton(2, BUTTON_HALL_DOWN)) {legg_til_etasje_i_kø(aKøPtr, e2n);};
     if (elevio_callButton(3, BUTTON_HALL_DOWN)) {legg_til_etasje_i_kø(aKøPtr, e3n);};
 
-    int lengde = aKøPtr->lengde;
-    printf("Lengde %d\n", lengde);
+    //printf("Lengde %d\n", aKøPtr->lengde);
 };
 
 
