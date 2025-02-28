@@ -54,15 +54,23 @@ void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje){
 
 
 void fjern_etasjer_fra_kø(Kø *aKø, int aEtasje){
+
+    // skrur av lyset til etasjen
+    elevio_buttonLamp(aEtasje, BUTTON_CAB, 0);
+    elevio_buttonLamp(aEtasje, BUTTON_HALL_DOWN, 0);
+    elevio_buttonLamp(aEtasje, BUTTON_HALL_UP, 0);
+
     Etasje* ny_liste = (Etasje*)malloc(aKø->lengde * sizeof(Etasje)); //lager plass til en ny liste. Her vil vi legge alle etasjene som ikke er aEtasje
     int ny_lengde = 0;
     for (int i = 0; i < aKø->lengde; i++){
         if (aKø->liste[i].etasje != aEtasje){ //går gjennom listen og legger de etasjene som IKKE er i aEtasje inn i den nye listen
             ny_liste[ny_lengde] = aKø->liste[i];
             ny_lengde++;
+
         }
     }
     free(aKø->liste); //frigjør det gamle minnet vi ikke lenger har behov for
     aKø->liste = (Etasje*)realloc(ny_liste, ny_lengde * sizeof(Etasje)); //reallokerer minnet slik at aKø->liste peker til et nytt sted (sannsynligvis samme sted som ny_liste)
     aKø->lengde = ny_lengde;
 };
+

@@ -1,8 +1,10 @@
 #pragma once
 #include "driver/elevio.h"
+#include "Kø.h"
+#include "heispanel.h"
+#include "Etasjepanel.h"
 
-void endre_etasjelys();
-void endre_heispanellys();
+void sett_lys(Kø *aKø, int etasje, int dør_åpen);
 void endre_stoppknapplys();
 void åpne_dør();
 void lukke_dør();

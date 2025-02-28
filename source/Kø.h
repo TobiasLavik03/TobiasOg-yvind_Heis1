@@ -1,5 +1,6 @@
 #pragma once
 #include <stdlib.h>
+#include "driver/elevio.h"
 
 
 typedef struct {
