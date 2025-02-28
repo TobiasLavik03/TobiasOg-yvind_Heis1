@@ -8,4 +8,6 @@
 
 Tobias:
 - Prøver å fikse virtual maskin [GITT OPP]
-- Skal fikse daualbooting, må sykle å kjøpe en USB på clas ohlson
+- Skal fikse daualbooting, må sykle å kjøpe en USB på clas ohlson[funket ikke]
+- laget kjør_opp, kjør_ned og stopp_heis [FERDIG]
+- 
