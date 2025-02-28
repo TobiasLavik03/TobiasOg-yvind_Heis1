@@ -13,9 +13,9 @@ typedef enum {
 } Heistilstand;
 
 extern volatile int etasje_tilstand;
-extern volatile int sist_etasje;                        // etasjen heisen er i eller forrige etasje dersom heisen er i bevegelse
+extern volatile int sist_etasje;                                // etasjen heisen er i eller forrige etasje dersom heisen er i bevegelse
 
-int er_i_etasje();
+int er_i_neste_etasje(int etasje_tilstand, int neste_stopp);    // sjekekr om etasje == neste_stopp
 
 void go_to_default();
 

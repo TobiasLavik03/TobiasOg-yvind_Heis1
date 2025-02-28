@@ -12,7 +12,7 @@ typedef struct{
     int lengde;
 } Kø;
 
-extern volatile int neste_stopp;     // extern fordi den deklareres i h fila, men defineres i en annen fil
+extern volatile int neste_stopp;                // extern fordi den deklareres i h fila, men defineres i en annen fil
 
 void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje);
 int etasje_finnes_i_kø(Kø *aKø, Etasje aEtasje);

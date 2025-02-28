@@ -10,6 +10,7 @@ void kjører_til_neste_stopp(int etasje, int neste_stopp) {
     // dersom neste_stopp = -1  er køen tom, og heisen skal stå i ro. 
     if (neste_stopp == -1) {
         elevio_motorDirection(DIRN_STOP);
+        
     }
 
     if (neste_stopp > etasje) {
