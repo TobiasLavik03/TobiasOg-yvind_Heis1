@@ -28,7 +28,7 @@ void kjører_til_neste_stopp(int etasje, int neste_stopp) {
 }
 
 void sett_lys(Kø *aKø, int etasje, int dør_åpen){
-    
+    printf("%d\n", aKø->lengde);
     for(int i=0; i<aKø->lengde; i++){
         // HEISPANEL_LYS
         if(aKø->liste[i].etasje == 0 && aKø->liste[i].retning == 0){
@@ -70,3 +70,21 @@ void sett_lys(Kø *aKø, int etasje, int dør_åpen){
     // OBSTRUKSJONSLYS
     // kalles i Dør.c under start_nedtelling()
 };
+
+void skru_av_alle_lys() {
+
+    elevio_buttonLamp(1, BUTTON_HALL_DOWN, 0);
+    elevio_buttonLamp(2, BUTTON_HALL_DOWN, 0);
+    elevio_buttonLamp(3, BUTTON_HALL_DOWN, 0);
+
+    elevio_buttonLamp(2, BUTTON_HALL_UP, 0);
+    elevio_buttonLamp(1, BUTTON_HALL_UP, 0);
+    elevio_buttonLamp(0, BUTTON_HALL_UP, 0);
+    
+    elevio_buttonLamp(3, BUTTON_CAB, 0);
+    elevio_buttonLamp(2, BUTTON_CAB, 0);
+    elevio_buttonLamp(1, BUTTON_CAB, 0);
+    elevio_buttonLamp(0, BUTTON_CAB, 0);
+
+    elevio_doorOpenLamp(0);
+}

@@ -38,7 +38,7 @@ int etasje_finnes_i_kø(Kø *aKø, Etasje aEtasje) {
 void legg_til_etasje_i_kø(Kø *aKø, Etasje aEtasje){
 
     // filter for at ikke samme etasje legges inn flere ganger
-    // loope gjennom kø
+    // loope gjennDisconnectedom kø
     // hvis etasje ligger i kø, ikke legg til i kø
     // hvis ikke, legg til i kø
     
