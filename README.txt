@@ -5,9 +5,3 @@
 - jobber med å kjøre til neste stopp [FERDIG, et par små bugs]
 - laget funksjonen er_i_neste_etasje() og start_nedtelling som får heisen til å paue i 3 sek i etasjen
 - MEN man klarer ikke legge til etasjer i køen når døra er åpen...
-
-Tobias:
-- Prøver å fikse virtual maskin [GITT OPP]
-- Skal fikse daualbooting, må sykle å kjøpe en USB på clas ohlson[funket ikke]
-- laget kjør_opp, kjør_ned og stopp_heis [FERDIG]
-- 
