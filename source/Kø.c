@@ -5,14 +5,43 @@
 
 volatile int neste_stopp = 0;
 
-int finn_neste_stopp(Kø *aKø) {
+int finn_neste_stopp(Kø *aKø, int sist_etasje, int kjøre_retning) {
     if (aKø == NULL || aKø->liste == NULL || aKø->lengde == 0) {
-        printf("Feil: tom kø");
         return -1;
     }
+    if (kjøre_retning==0 && aKø->lengde==1){
+        return aKø->liste[0].etasje;
+    }
 
-    // forenklet versjon: første i køen
-    return aKø->liste[0].etasje;
+    int minste_avstand = 100;
+    int neste_stopp = -1;
+    int avstand = 0;
+
+    for (int i = 0; i<aKø->lengde; i++ ){
+        if(kjøre_retning>0){
+            if (((aKø->liste[i].retning == kjøre_retning) || (aKø->liste[i].retning == 0)) && (aKø->liste[i].etasje>sist_etasje)){
+                avstand = aKø->liste[i].etasje - sist_etasje;
+                if (avstand<minste_avstand){
+                    minste_avstand=avstand;
+                    neste_stopp = aKø->liste[i].etasje;
+                }
+            }
+        } 
+        if(kjøre_retning<0){
+            if (((aKø->liste[i].retning == kjøre_retning) || (aKø->liste[i].retning == 0)) && (aKø->liste[i].etasje<sist_etasje)){
+                avstand = sist_etasje - aKø->liste[i].etasje;
+                // printf("avstand, %d\n", avstand);
+                if (avstand<minste_avstand){
+                    minste_avstand=avstand;
+                    neste_stopp = aKø->liste[i].etasje;
+                }
+            }
+        }
+    }
+
+    return neste_stopp;
+    
+    
 }
 
 // tømmer hele køen
