@@ -12,7 +12,7 @@ int main() {
   go_to_default(aKø);
   
   printf("=== Example Program ===\n");
-  printf("Press the stoncludep button on the elevator panel to exit\n");
+  printf("Press the stop button on the elevator panel to exit\n");
   int i=0;
 
 
@@ -40,6 +40,7 @@ int main() {
     kjører_til_neste_stopp(sist_etasje, neste_stopp);
     // hvis kommet fram til neste etasje - kall fjern_etasje_fra_kø()
     if (er_i_neste_etasje(sist_etasje, neste_stopp)) {
+      heistilstand = står_stille_i_etasje;
       fjern_etasjer_fra_kø(&aKø, sist_etasje);
       start_nedtelling(&aKø);
     }
@@ -50,9 +51,12 @@ int main() {
       printf("Kjøreretning: %d\n", retning);
     }
     i++;
+
     nanosleep(&(struct timespec){0, 20 * 1000 * 1000}, NULL);
+
   } else{
     elevio_motorDirection(DIRN_STOP);
+    heistilstand = stoppmodus;
     tøm_kø(&aKø);
     start_nedtelling(&aKø);
   }

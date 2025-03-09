@@ -12,7 +12,7 @@ void start_nedtelling(Kø *aKø) {
     i++;
     heispanel_etasjetrykk(aKø);
     dør_åpen = 1;
-    //printf("Dør åpen: %d\n", dør_åpen);
+    printf("Dør åpen: %d\n", dør_åpen);
     elevio_doorOpenLamp(1);
 
     // for at heisen ikke skal hakke nedover under obstruksjon

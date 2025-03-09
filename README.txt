@@ -1,10 +1,7 @@
 Øyvind: 
-- lager  heispanel_etasjetrykk() som kaller legg_til_etasje_i_kø() dersom etasjepanelet trykkes [FERDIG]
-- jobber med at legg_til_etasje_i_kø() ikke legger til samme etasje flere ganger [FERDIG]
-- bytter ut kjører_opp() og kjører_ned() til kjører_til_neste_stopp() 
-- jobber med å kjøre til neste stopp [FERDIG, et par små bugs]
-- laget funksjonen er_i_neste_etasje() og start_nedtelling som får heisen til å paue i 3 sek i etasjen
-- MEN man klarer ikke legge til etasjer i køen når døra er åpen...
+- fant noen bugs vi må fikse: 
+    - hvis man trykker på stopp-knappen mellom 2 etasjer, for å deretter trykke på den forrige etasjen den var i vil ikke heisen kjøre dit fordi det var den siste etasjen den var i. 
+    - får den for mange bestillinger vil ikke heisen kjøre noe sted, tror den sliter med å vite hva den skal gjøre hvis den ikke er i en bevegelsesretning eller hvis den får inn etasjer over og under.  
 
 Tobias:
 - lager void go_to_default(); //går til 3 etasje og lukker døren [FERDIG]

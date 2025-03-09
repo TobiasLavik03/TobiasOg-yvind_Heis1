@@ -18,11 +18,5 @@ extern volatile int retning;                             // etasjen heisen er i 
 
 int er_i_neste_etasje(int etasje_tilstand, int neste_stopp);    // sjekekr om etasje == neste_stopp
 
-void go_to_default();
 
-void endre_tilstand_obstruksjon(Heistilstand *heistilstand);        // kalles dersom elevio_obstruction() endres
-
-void go_to_default();
-
-int etasje_sist_vært_i(int etasje);     
 
